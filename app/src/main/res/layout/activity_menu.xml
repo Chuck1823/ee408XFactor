@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="64dp"
+    android:paddingRight="64dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:background="#42B956">
+    tools:context="edu.clarkson.chaz.xfactor.Menu">
+
+    <TextView
+        android:id="@+id/label_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="#FFDE00"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:text="X-Factor: Learn To Multiply Like A Champ" />
+
+    <Button
+        android:id="@+id/button_basics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/label_text"
+        android:background="#FFDE00"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="Basics Of Multiplication" />
+
+    <Button
+        android:id="@+id/button_try"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/button_basics"
+        android:background="#FFDE00"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="Try It Out" />
+
+    <Button
+        android:id="@+id/button_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/button_try"
+        android:background="#FFDE00"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="Test Your Skills!" />
+
+</RelativeLayout>
