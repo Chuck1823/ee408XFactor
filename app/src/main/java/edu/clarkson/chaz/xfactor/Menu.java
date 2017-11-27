@@ -14,6 +14,8 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         Button basicsButton = (Button)findViewById(R.id.button_basics);
+        Button tryButton = (Button)findViewById(R.id.button_try);
+        Button testButton = (Button)findViewById(R.id.button_test);
 
         basicsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -21,5 +23,20 @@ public class Menu extends AppCompatActivity {
                 startActivity(new Intent(Menu.this, BasicsOfMultiplication.class));
             }
         });
+
+        tryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Menu.this, TryItOut.class));
+            }
+        });
+
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Menu.this, TestYourSkills.class));
+            }
+        });
+
     }
 }

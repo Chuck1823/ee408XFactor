@@ -20,7 +20,8 @@
             android:name=".BasicsOfMultiplication"
             android:label="@string/title_activity_basics_of_multiplication"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".TryItOut"></activity>
+        <activity android:name=".TryItOut" />
+        <activity android:name=".TestYourSkills"></activity>
     </application>
 
 </manifest>
