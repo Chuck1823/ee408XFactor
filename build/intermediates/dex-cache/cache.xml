@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Larry\.android\build-cache\019ac3ab84327a58da0650cad55b0d8912c17bb8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="C:\Users\Larry\Documents\GitHub\ee408XFactor\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_49fa1aa24b932b4d0d6621b3b92232e08e17095b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Larry\Documents\GitHub\ee408XFactor\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\Larry\Documents\GitHub\ee408XFactor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_044ab6b7782d05c8b1f6ae7738e86e08cf1ae51f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Larry\.android\build-cache\240a0f8b37008d1aa66daaf0d2b1b746f65b50c5\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="C:\Users\Larry\Documents\GitHub\ee408XFactor\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_50125e6b3bc34f04a642e5bebae4389af04d0153\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Larry\.android\build-cache\66aaaa88a3347704584b49ce55027c6d142c064f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="C:\Users\Larry\Documents\GitHub\ee408XFactor\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_70b406b607398d4f0377600b779f4ab11187f792\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Larry\Documents\GitHub\ee408XFactor\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="bd4ecf2a073d98c830923fc2eab78b0bfc0850e8">
+        <dex dex="C:\Users\Larry\Documents\GitHub\ee408XFactor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_ab864adc1435e6e590a24a1a517be0e74c2871aa\classes.dex" />
+    </item>
+
+</items>

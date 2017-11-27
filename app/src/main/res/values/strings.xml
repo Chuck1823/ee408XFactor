@@ -3,4 +3,5 @@
     <string name="title_activity_basics_of_multiplication">BasicsOfMultiplication</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="input_numbers">Please enter two numbers you would like to see multiplied. We will walk you through the process on how to solve the operation. Please limit each number to 3 digits long.</string>
 </resources>
