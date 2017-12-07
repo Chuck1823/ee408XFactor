@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">XFactor</string>
+    <string name="title_activity_basics_of_multiplication">Basics Of Multiplication</string>
+    <string name="step_format">Step %1$d</string>
+
+    <string name="input_numbers">Please enter two numbers you would like to see multiplied. We will walk you through the process on how to solve the operation. Please limit each number to 3 digits long.</string>
+</resources>
