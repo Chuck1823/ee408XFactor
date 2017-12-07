@@ -1,2 +1,2 @@
 # ee408XFactor
-Educational android mobile app used to teach integer multiplication
+Educational android mobile app used to teach multiplication

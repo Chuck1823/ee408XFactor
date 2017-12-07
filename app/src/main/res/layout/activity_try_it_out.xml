@@ -62,6 +62,8 @@
         android:layout_below="@id/first_num"
         android:layout_marginLeft="125dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/highlight1"
+        android:layout_centerHorizontal="true"
         android:text="Submit"        />
 
     <TextView
@@ -118,7 +120,7 @@
         android:layout_toLeftOf="@id/blank1"
         android:text="x"
         android:textSize="18sp" />
-    
+
     <View
         android:layout_width="120dp"
         android:layout_height="1dp"
@@ -371,7 +373,8 @@
         android:layout_alignParentBottom="true"
         android:id="@+id/previous"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="30dp"/>
+        android:layout_marginRight="30dp"
+        android:background="@drawable/highlight1"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -381,7 +384,9 @@
         android:layout_toRightOf="@id/previous"
         android:id="@+id/menu"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="30dp"/>
+        android:layout_marginRight="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/highlight1"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -390,6 +395,7 @@
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@id/menu"
         android:id="@+id/next"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:background="@drawable/highlight1"/>
 
 </RelativeLayout>
