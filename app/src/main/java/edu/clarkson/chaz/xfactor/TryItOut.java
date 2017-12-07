@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.view.inputmethod.InputMethodManager;
+import android.content.Context;
+import android.widget.Toast;
 
 public class TryItOut extends AppCompatActivity {
 
@@ -359,113 +362,126 @@ public class TryItOut extends AppCompatActivity {
             public void onClick(View v) {
                 //Retrieve Values and initialize numbers
 
+                InputMethodManager inputManager = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                inputManager.hideSoftInputFromWindow((null == getCurrentFocus()) ? null : getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
                 reset();
-                int dig1;
-                int dig2;
-                int num1_val = Integer.parseInt(num1.getText().toString());
-                int num2_val = Integer.parseInt(num2.getText().toString());
+                String num_text1 = num1.getText().toString().trim();
+                String num_text2 = num2.getText().toString().trim();
 
-                if (num1_val < num2_val) {
-                    int temp = num1_val;
-                    num1_val = num2_val;
-                    num2_val = temp;
-                }
-
-                int total_answer = num1_val * num2_val;
-                sum6 = total_answer / 100000;
-                sum5 = (total_answer - (sum6 * 100000)) / 10000;
-                sum4 = (total_answer - (sum6 * 100000) - (sum5 * 10000)) / 1000;
-                sum3 = (total_answer - (sum6 * 100000) - (sum5 * 10000) - (sum4 * 1000)) / 100;
-                sum2 = (total_answer - (sum6 * 100000) - (sum5 * 10000) - (sum4 * 1000) - (sum3 * 100)) / 10;
-                sum1 = (total_answer - (sum6 * 100000) - (sum5 * 10000) - (sum4 * 1000) - (sum3 * 100) - (sum2 * 10));
-
-                int num1_H_val = (int)Math.round(num1_val / 100);
-                int num1_T_val = (int)Math.round((num1_val - (num1_H_val * 100)) / 10);
-                int num1_O_val = (num1_val - (num1_H_val * 100) - (num1_T_val * 10));
-
-                int num2_H_val = (int)Math.round(num2_val / 100);
-                int num2_T_val = (int)Math.round((num2_val - (num2_H_val * 100)) / 10);
-                int num2_O_val = (num2_val - (num2_H_val * 100) - (num2_T_val * 10));
-
-                if (num1_H_val != 0) {
-                    num1_dig3.setText(Integer.toString(num1_H_val));
-                    num1_dig2.setText(Integer.toString(num1_T_val));
-                    dig1 = 3;
-                }else if (num1_H_val == 0 && num1_T_val != 0) {
-                    num1_dig2.setText(Integer.toString(num1_T_val));
-                    dig1 = 2;
+                if (num_text1.isEmpty() || num_text1.length() == 0 || num_text1.equals("") || num_text1 == null || num_text2.isEmpty() || num_text2.length() == 0 || num_text2.equals("") || num_text2 == null) {
+                    Toast.makeText(TryItOut.this, "Numbers must be entered to submit!",
+                            Toast.LENGTH_SHORT).show();
                 }else {
-                    dig1 = 1;
-                }
+                    int dig1;
+                    int dig2;
+                    int num1_val = Integer.parseInt(num1.getText().toString());
+                    int num2_val = Integer.parseInt(num2.getText().toString());
 
-                num1_dig1.setText(Integer.toString(num1_O_val));
+                    if (num1_val < num2_val) {
+                        int temp = num1_val;
+                        num1_val = num2_val;
+                        num2_val = temp;
+                    }
 
-                if (num2_H_val != 0) {
-                    num2_dig3.setText(Integer.toString(num2_H_val));
-                    num2_dig2.setText(Integer.toString(num2_T_val));
-                    dig2 = 3;
-                }else if (num2_H_val == 0 && num2_T_val != 0) {
-                    num2_dig2.setText(Integer.toString(num2_T_val));
-                    dig2 = 2;
-                }else {
-                    dig2 = 1;
-                }
+                    int total_answer = num1_val * num2_val;
+                    sum6 = total_answer / 100000;
+                    sum5 = (total_answer - (sum6 * 100000)) / 10000;
+                    sum4 = (total_answer - (sum6 * 100000) - (sum5 * 10000)) / 1000;
+                    sum3 = (total_answer - (sum6 * 100000) - (sum5 * 10000) - (sum4 * 1000)) / 100;
+                    sum2 = (total_answer - (sum6 * 100000) - (sum5 * 10000) - (sum4 * 1000) - (sum3 * 100)) / 10;
+                    sum1 = (total_answer - (sum6 * 100000) - (sum5 * 10000) - (sum4 * 1000) - (sum3 * 100) - (sum2 * 10));
 
-                num2_dig1.setText(Integer.toString(num2_O_val));
+                    int num1_H_val = (int) Math.round(num1_val / 100);
+                    int num1_T_val = (int) Math.round((num1_val - (num1_H_val * 100)) / 10);
+                    int num1_O_val = (num1_val - (num1_H_val * 100) - (num1_T_val * 10));
 
-                page_num = 1;
+                    int num2_H_val = (int) Math.round(num2_val / 100);
+                    int num2_T_val = (int) Math.round((num2_val - (num2_H_val * 100)) / 10);
+                    int num2_O_val = (num2_val - (num2_H_val * 100) - (num2_T_val * 10));
 
-                //Make all calculations
-                max_page_num = 3;
-                ans_O_1 = num1_O_val * num2_O_val;
-                carryO1 = (int)Math.round(ans_O_1 / 10);
-                ans_O_1 = ans_O_1 % 10;
-                if (dig2 > 1) {
-                    max_page_num = 4;
-                    ans_T_1 = num1_O_val * num2_T_val;
-                    carryT1 = (int)Math.round(ans_T_1 / 10);
-                    ans_T_1 = ans_T_1 % 10;
-                }
-                if (dig2 > 2) {
-                    max_page_num = 5;
-                    ans_H_1 = num1_O_val * num2_H_val;
-                    carryH1 = (int)Math.round(ans_H_1 / 10);
-                    ans_H_1 = ans_H_1 % 10;
-                }
-                if (dig1 > 1) {
-                    max_page_num = 4;
-                    ans_O_2 = num1_T_val * num2_O_val + carryO1;
-                    carryO2 = (int)Math.round(ans_O_2 / 10);
-                    ans_O_2 = ans_O_2 % 10;
+                    if (num1_H_val != 0) {
+                        num1_dig3.setText(Integer.toString(num1_H_val));
+                        num1_dig2.setText(Integer.toString(num1_T_val));
+                        dig1 = 3;
+                    } else if (num1_H_val == 0 && num1_T_val != 0) {
+                        num1_dig2.setText(Integer.toString(num1_T_val));
+                        dig1 = 2;
+                    } else {
+                        dig1 = 1;
+                    }
+
+                    num1_dig1.setText(Integer.toString(num1_O_val));
+
+                    if (num2_H_val != 0) {
+                        num2_dig3.setText(Integer.toString(num2_H_val));
+                        num2_dig2.setText(Integer.toString(num2_T_val));
+                        dig2 = 3;
+                    } else if (num2_H_val == 0 && num2_T_val != 0) {
+                        num2_dig2.setText(Integer.toString(num2_T_val));
+                        dig2 = 2;
+                    } else {
+                        dig2 = 1;
+                    }
+
+                    num2_dig1.setText(Integer.toString(num2_O_val));
+
+                    page_num = 1;
+
+                    //Make all calculations
+                    max_page_num = 3;
+                    ans_O_1 = num1_O_val * num2_O_val;
+                    carryO1 = (int) Math.round(ans_O_1 / 10);
+                    ans_O_1 = ans_O_1 % 10;
                     if (dig2 > 1) {
-                        max_page_num = 6;
-                        ans_T_2 = num1_T_val * num2_T_val + carryT1;
-                        carryT2 = (int)Math.round(ans_T_2 / 10);
-                        ans_T_2 = ans_T_2 % 10;
+                        max_page_num = 4;
+                        ans_T_1 = num1_O_val * num2_T_val;
+                        carryT1 = (int) Math.round(ans_T_1 / 10);
+                        ans_T_1 = ans_T_1 % 10;
                     }
-                    if (dig2 > 2){
-                        max_page_num = 8;
-                        ans_H_2 = num1_T_val * num2_H_val + carryH1;
-                        carryH2 = (int)Math.round(ans_H_2 / 10);
-                        ans_H_2 = ans_H_2 % 10;
+                    if (dig2 > 2) {
+                        max_page_num = 5;
+                        ans_H_1 = num1_O_val * num2_H_val;
+                        carryH1 = (int) Math.round(ans_H_1 / 10);
+                        ans_H_1 = ans_H_1 % 10;
                     }
-                }
-                if (dig1 > 2) {
-                    max_page_num = 5;
-                    ans_O_3 = num1_H_val * num2_O_val + carryO2;
-                    carryO3 = (int)Math.round(ans_O_3 / 10);
-                    ans_O_3 = ans_O_3 % 10;
-                    if (dig2 > 1) {
-                        max_page_num = 8;
-                        ans_T_3 = num1_H_val * num2_T_val + carryT2;
-                        carryT3 = (int)Math.round(ans_T_3 / 10);
-                        ans_T_3 = ans_T_3 % 10;
+                    if (dig1 > 1) {
+                        max_page_num = 4;
+                        ans_O_2 = num1_T_val * num2_O_val + carryO1;
+                        carryO2 = (int) Math.round(ans_O_2 / 10);
+                        ans_O_2 = ans_O_2 % 10;
+                        if (dig2 > 1) {
+                            max_page_num = 6;
+                            ans_T_2 = num1_T_val * num2_T_val + carryT1;
+                            carryT2 = (int) Math.round(ans_T_2 / 10);
+                            ans_T_2 = ans_T_2 % 10;
+                        }
+                        if (dig2 > 2) {
+                            max_page_num = 8;
+                            ans_H_2 = num1_T_val * num2_H_val + carryH1;
+                            carryH2 = (int) Math.round(ans_H_2 / 10);
+                            ans_H_2 = ans_H_2 % 10;
+                        }
                     }
-                    if (dig2 > 2 ) {
-                        max_page_num = 11;
-                        ans_H_3 = num1_H_val * num2_H_val + carryT3;
-                        carryH3 = (int)Math.round(ans_H_3 / 10);
-                        ans_H_3 = ans_H_3 % 10;
+                    if (dig1 > 2) {
+                        max_page_num = 5;
+                        ans_O_3 = num1_H_val * num2_O_val + carryO2;
+                        carryO3 = (int) Math.round(ans_O_3 / 10);
+                        ans_O_3 = ans_O_3 % 10;
+                        if (dig2 > 1) {
+                            max_page_num = 8;
+                            ans_T_3 = num1_H_val * num2_T_val + carryT2;
+                            carryT3 = (int) Math.round(ans_T_3 / 10);
+                            ans_T_3 = ans_T_3 % 10;
+                        }
+                        if (dig2 > 2) {
+                            max_page_num = 11;
+                            ans_H_3 = num1_H_val * num2_H_val + carryT3;
+                            carryH3 = (int) Math.round(ans_H_3 / 10);
+                            ans_H_3 = ans_H_3 % 10;
+                        }
                     }
                 }
             }

@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Charles Antoine\Documents\Workspace\EE408\ee408XFactor\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="a9c66b2fb53e18a1718b5d0be0394ec4c3e9581e">
-        <dex dex="C:\Users\Charles Antoine\Documents\Workspace\EE408\ee408XFactor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_e00f9b46d77425b691124544b4252eaf8feb0dee\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Charles Antoine\Documents\Workspace\EE408\ee408XFactor\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\Larry\Documents\GitHub\ee408XFactor\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Charles Antoine\Documents\Workspace\EE408\ee408XFactor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_5053c63be06bb9eb8b095965dae9879123d951fc\classes.dex" />
+        <dex dex="C:\Users\Larry\Documents\GitHub\ee408XFactor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_044ab6b7782d05c8b1f6ae7738e86e08cf1ae51f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Larry\Documents\GitHub\ee408XFactor\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3d913ca4fbc3a6ac26888b43c651700b231dfc93">
+        <dex dex="C:\Users\Larry\Documents\GitHub\ee408XFactor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_ab864adc1435e6e590a24a1a517be0e74c2871aa\classes.dex" />
     </item>
 
 </items>
