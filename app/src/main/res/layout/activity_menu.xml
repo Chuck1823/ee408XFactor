@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/highlight1"
         android:layout_below="@+id/label_text"
-        android:textSize="42dp"
+        android:textSize="43dp"
         android:text="X"
         android:textColor="@android:color/black"
         android:visibility="gone"/>
