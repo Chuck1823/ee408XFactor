@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -38,6 +40,9 @@ public class TryItOut extends AppCompatActivity {
     private TextView answer_O3;
     private TextView answer_O2;
     private TextView answer_O1;
+
+    private TextView explanation;
+    private TextView arrow;
 
     private TextView sum_6;
     private TextView sum_5;
@@ -314,6 +319,9 @@ public class TryItOut extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_try_it_out);
 
+        final Animation bounce = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        final Animation rotate = AnimationUtils.loadAnimation(this, R.anim.rotate);
+
         submit = (Button)findViewById(R.id.submit_nums);
         previous = (Button)findViewById(R.id.previous);
         menu = (Button)findViewById(R.id.menu);
@@ -354,6 +362,11 @@ public class TryItOut extends AppCompatActivity {
 
         page_num = -1;
 
+        explanation = (TextView)findViewById(R.id.explanation);
+        arrow = (TextView)findViewById(R.id.arrow);
+        explanation.setVisibility(View.GONE);
+        arrow.setVisibility(View.GONE);
+
 
 
         //Submit listener
@@ -361,6 +374,13 @@ public class TryItOut extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Retrieve Values and initialize numbers
+
+                arrow.clearAnimation();
+                arrow.setVisibility(View.GONE);
+                explanation.setText("Multiply the ones digit of the bottom number with the ones digit" +
+                        " of the top number.");
+                explanation.setVisibility(View.VISIBLE);
+                explanation.startAnimation(bounce);
 
                 InputMethodManager inputManager = (InputMethodManager)
                         getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -504,6 +524,14 @@ public class TryItOut extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (page_num < max_page_num) {
+                    explanation.clearAnimation();
+                    explanation.setVisibility(View.GONE);
+                    arrow.setVisibility(View.VISIBLE);
+                    arrow.startAnimation(rotate);
+                    if(page_num > 1) {
+                        arrow.clearAnimation();
+                        arrow.setVisibility(View.GONE);
+                    }
                     page_num++;
                     clearAns();
                     steps();

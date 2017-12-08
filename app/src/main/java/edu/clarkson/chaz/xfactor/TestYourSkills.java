@@ -82,9 +82,17 @@ public class TestYourSkills extends AppCompatActivity {
                     } else {
                         hintCount++;
                     }
+                    a1.setClickable(false);
+                    a2.setClickable(false);
+                    a3.setClickable(false);
+                    a4.setClickable(false);
                 } else {
                     dialog.setText("Incorrect!");
                     hintCount = 0;
+                    a1.setClickable(false);
+                    a2.setClickable(false);
+                    a3.setClickable(false);
+                    a4.setClickable(false);
                 }
             }
         });
@@ -99,9 +107,17 @@ public class TestYourSkills extends AppCompatActivity {
                     } else {
                         hintCount++;
                     }
+                    a1.setClickable(false);
+                    a2.setClickable(false);
+                    a3.setClickable(false);
+                    a4.setClickable(false);
                 } else {
                     dialog.setText("Incorrect!");
                     hintCount = 0;
+                    a1.setClickable(false);
+                    a2.setClickable(false);
+                    a3.setClickable(false);
+                    a4.setClickable(false);
                 }
             }
         });
@@ -116,9 +132,17 @@ public class TestYourSkills extends AppCompatActivity {
                     } else {
                         hintCount++;
                     }
+                    a1.setClickable(false);
+                    a2.setClickable(false);
+                    a3.setClickable(false);
+                    a4.setClickable(false);
                 } else {
                     dialog.setText("Incorrect!");
                     hintCount = 0;
+                    a1.setClickable(false);
+                    a2.setClickable(false);
+                    a3.setClickable(false);
+                    a4.setClickable(false);
                 }
             }
         });
@@ -133,9 +157,17 @@ public class TestYourSkills extends AppCompatActivity {
                     } else {
                         hintCount++;
                     }
+                    a1.setClickable(false);
+                    a2.setClickable(false);
+                    a3.setClickable(false);
+                    a4.setClickable(false);
                 } else {
                     dialog.setText("Incorrect!");
                     hintCount = 0;
+                    a1.setClickable(false);
+                    a2.setClickable(false);
+                    a3.setClickable(false);
+                    a4.setClickable(false);
                 }
             }
         });
@@ -155,6 +187,11 @@ public class TestYourSkills extends AppCompatActivity {
 
                 TextView question = (TextView) findViewById(R.id.question);
                 final TextView dialog = (TextView) findViewById(R.id.dialog);
+
+                a1.setClickable(true);
+                a2.setClickable(true);
+                a3.setClickable(true);
+                a4.setClickable(true);
 
                 dialog.setText("");
 
@@ -189,7 +226,7 @@ public class TestYourSkills extends AppCompatActivity {
                                     hintCount = 0;
                                 } else if (hintRotation == 3) {
                                     String answerFirstDigit = String.valueOf(answer);
-                                    dialog.setText("The first digit of the answer is " + answerFirstDigit.substring(answerFirstDigit.length() - 1) + ".");
+                                    dialog.setText("The ones digit of the answer is " + answerFirstDigit.substring(answerFirstDigit.length() - 1) + ".");
                                     hintCount = 0;
                                 }
                             }

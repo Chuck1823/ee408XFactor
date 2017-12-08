@@ -126,14 +126,44 @@
         android:layout_height="1dp"
         android:background="@android:color/black"
         android:layout_below="@id/times"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:id="@+id/firstBar"/>
+
+    <TextView
+        android:id="@+id/arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/firstBar"
+        android:layout_toLeftOf="@+id/answer_O4"
+        android:layout_marginRight="40dp"
+        android:text="---->"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/explanation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/highlight4"
+        android:layout_below="@id/sum_1"
+        android:layout_above="@id/menu"
+        android:layout_margin="10dp"
+        android:textSize="25dp"
+        android:textColor="@android:color/black"
+        android:text=""/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <View
         android:layout_width="120dp"
         android:layout_height="1dp"
         android:background="@android:color/black"
         android:layout_below="@id/plus"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:id="@+id/secondBar"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -374,6 +404,7 @@
         android:id="@+id/previous"
         android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
+        android:layout_toLeftOf="@id/menu"
         android:background="@drawable/highlight1"/>
 
     <Button
@@ -381,7 +412,6 @@
         android:layout_height="wrap_content"
         android:text="Main Menu"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/previous"
         android:id="@+id/menu"
         android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
